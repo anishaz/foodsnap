@@ -10,7 +10,6 @@ Use Homebrew to install yarn
 
 ```
 brew install yarn
-
 ```
 
 # The Backend
@@ -20,7 +19,6 @@ brew install yarn
 ```
 
 brew install mongodb
-
 ```
 
 Wait for installation to finish. Then:
@@ -33,7 +31,6 @@ Wait for installation to finish. Then:
 > cd data
 
 > mkdir db
-
 ```
 
 (May need to run as `sudo`)
@@ -42,7 +39,6 @@ Wait for installation to finish. Then:
 
 ```
 mongod
-
 ```
 
 (or `sudo mongod`)
@@ -53,7 +49,6 @@ To install the backend packages, run the following in the root folder:
 
 ```
 yarn install
-
 ```
 
 # The Frontend - Angular.io
@@ -62,7 +57,6 @@ To install frontend packages, please go to the /public/ folder and:
 
 ```
 yarn install
-
 ```
 
 # Running the environment
