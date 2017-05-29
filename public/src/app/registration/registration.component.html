@@ -1,0 +1,36 @@
+<form (submit)="register(formData)" #formData="ngForm">
+  <label for="first_name">First Name:</label>
+  <input type="text"
+  name="first_name"
+  required
+  minlength = "3"
+  maxlength = "20"
+  ngModel
+  #first_name="ngModel">
+  <ul *ngIf="first_name.errors && (first_name.dirty || first_name.touched)">
+        <li [hidden]="!first_name.errors.minlength">First name must be at least 3 characters.</li>
+        <li [hidden]="!first_name.errors.maxlength">First name must be no greater than 20 characters.</li>
+        <li [hidden]="!first_name.errors.required">First name is required.</li>
+  </ul>
+  <label for="last_name">Last Name:</label>
+  <input type="text"
+  name="last_name"
+  required
+  minlength = "3"
+  maxlength = "25"
+  ngModel
+  #last_name="ngModel">
+  <label for="email">Email:</label>
+  <input type="email"
+  name="email"
+  required
+  ngModel
+  #email="ngModel">
+  <label for="password">Password:</label>
+  <input type="password"
+  name="password"
+  required
+  ngModel
+  #password="ngModel">
+  <input type="submit" value="Login">
+</form>

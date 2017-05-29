@@ -1,15 +1,15 @@
 <form (submit)="login(formData)" #formData="ngForm">
-  <input type="text"
-  name="first_name"
+  <label for="email">Email:</label>
+  <input type="email"
+  name="email"
   required
-  minlength = "3"
-  maxlength = "20"
   ngModel
-  #first_name="ngModel">
-  <ul *ngIf="first_name.errors && (first_name.dirty || first_name.touched)">
-        <li [hidden]="!first_name.errors.minlength">First name must be at least 3 characters.</li>
-        <li [hidden]="!first_name.errors.maxlength">First name must be no greater than 20 characters.</li>
-        <li [hidden]="!first_name.errors.required">First name is required.</li>
-  </ul>
+  #email="ngModel">
+  <label for="password">Password:</label>
+  <input type="password"
+  name="password"
+  required
+  ngModel
+  #password="ngModel">
   <input type="submit" value="Login">
 </form>

@@ -9,16 +9,21 @@ import { NavigationComponent } from './navigation/navigation.component';
 
 import { LoginService } from './login/login.service';
 
+import { routing } from './app.routes';
+import { RegistrationComponent } from './registration/registration.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    NavigationComponent
+    NavigationComponent,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    routing
   ],
   providers: [
     LoginService,
