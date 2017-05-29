@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  font-family: 'Nunito', Helvetica, sans-serif;
+  color: #efe6dd;
+  background: #231f20;
+}
+
+a:link, a:visited {
+  color: #bb4430;
+  text-decoration: none;
+}
+
+a:hover, a:active {
+  color: #7ebdc2;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Pacifico', Helvetica, Arial, sans-serif;
+}
