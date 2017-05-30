@@ -8,6 +8,8 @@ import { LoginComponent } from './login/login.component';
 import { NavigationComponent } from './navigation/navigation.component';
 
 import { LoginService } from './login/login.service';
+import { ImageGridComponent } from './image-grid/image-grid.component';
+import { ImageGridService } from './image-grid/image-grid.service';
 
 import { routing } from './app.routes';
 import { RegistrationComponent } from './registration/registration.component';
@@ -17,7 +19,8 @@ import { RegistrationComponent } from './registration/registration.component';
     AppComponent,
     LoginComponent,
     NavigationComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    ImageGridComponent
   ],
   imports: [
     BrowserModule,
@@ -27,6 +30,7 @@ import { RegistrationComponent } from './registration/registration.component';
   ],
   providers: [
     LoginService,
+    ImageGridService
   ],
   bootstrap: [AppComponent]
 })
