@@ -5,11 +5,17 @@
   required
   ngModel
   #email="ngModel">
+  <ul *ngIf="email.errors && (email.dirty || email.touched)">
+        <li [hidden]="!email.errors.required">Email is required.</li>
+  </ul>
   <label for="password">Password:</label>
   <input type="password"
   name="password"
   required
   ngModel
   #password="ngModel">
+  <ul *ngIf="password.errors && (password.dirty || password.touched)">
+        <li [hidden]="!password.errors.required">Password is required.</li>
+  </ul>
   <input type="submit" value="Login">
 </form>

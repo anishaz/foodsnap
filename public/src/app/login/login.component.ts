@@ -10,9 +10,15 @@ import { NgForm } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _loginService: LoginService, private _router: Router) { }
 
   ngOnInit() {
   }
+
+  login(formData){
+  this._loginService.login(formData.value)
+    .then( (user) => this._router.navigate(['/']))
+    .catch( (err) => alert(err))
+}
 
 }
