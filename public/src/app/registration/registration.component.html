@@ -1,3 +1,4 @@
+<p *ngFor="let err of errors">{{err}}</p>
 <form (submit)="register(formData)" #formData="ngForm">
   <label for="first_name">First Name:</label>
   <input type="text"
@@ -38,10 +39,12 @@
   <input type="password"
   name="password"
   required
+  minlength = "8"
   ngModel
   #password="ngModel">
   <ul *ngIf="password.errors && (password.dirty || password.touched)">
         <li [hidden]="!password.errors.required">Password is required.</li>
+        <li [hidden]="!password.errors.minlength">Password must be at least 8 characters.</li>
   </ul>
   <input type="submit" value="Login">
 </form>

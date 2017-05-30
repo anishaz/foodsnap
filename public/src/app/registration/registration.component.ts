@@ -9,6 +9,7 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./registration.component.less']
 })
 export class RegistrationComponent implements OnInit {
+  errors: any;
 
   constructor(private _registrationService: RegistrationService, private _router: Router) {}
 
@@ -18,7 +19,9 @@ export class RegistrationComponent implements OnInit {
   register(formData){
   this._registrationService.register(formData.value)
     .then( (user) => this._router.navigate(['/']))
-    .catch( (err) => alert(err))
+    .catch( (err) => {
+      this.errors = err._body.split(',')
+    })
   }
 
 }

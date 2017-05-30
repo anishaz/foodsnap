@@ -22,8 +22,11 @@ module.exports = {
         let newUser = new User(req.body);
         newUser.save((err, savedUser) => {
           if(err){
-            console.log(err);
-            return res.sendStatus(500);
+            let errors = "";
+            for(let i in err.errors){
+              errors += err.errors[i].message + ',';
+            }
+            return res.status(500).send(errors);
           }else {
             req.session.user = savedUser;
             return res.json(savedUser);
