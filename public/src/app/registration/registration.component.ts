@@ -18,7 +18,7 @@ export class RegistrationComponent implements OnInit {
 
   register(formData){
   this._registrationService.register(formData.value)
-    .then( (user) => this._router.navigate(['/']))
+    .then( (user) => this._router.navigate(['/login']))
     .catch( (err) => {
       this.errors = err._body.split(',')
     })

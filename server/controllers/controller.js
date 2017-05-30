@@ -1,4 +1,5 @@
 let mongoose = require('mongoose');
+let bcrypt = require('bcrypt');
 
 let User = mongoose.model('User');
 let Image = mongoose.model('Image');
@@ -9,7 +10,10 @@ module.exports = {
       if(err){
         console.log(err);
         return res.sendStatus(500);
-      }else {
+      }else if(user == null) {
+        return res.status(500).send("User does not exist")
+      } else {
+        console.log("User exists");
         req.session.user = user;
         return res.json(user);
       }
@@ -28,6 +32,7 @@ module.exports = {
             }
             return res.status(500).send(errors);
           }else {
+            console.log("User is saved")
             req.session.user = savedUser;
             return res.json(savedUser);
           }
@@ -35,5 +40,18 @@ module.exports = {
       }
     })
   },
+
+  current: (req,res) => {
+    if(!req.session.user){
+      return res.status(401).send("You need to log in.");
+    }else{
+      return res.json(req.session.user);
+    }
+  },
+
+  logout: (req,res) => {
+    req.session.destroy();
+    res.redirect('/');
+  }
 
 }

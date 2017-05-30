@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
 
   login(formData){
   this._loginService.login(formData.value)
-    .then( (user) => this._router.navigate(['/']))
+    .then( (user) => this._router.navigate(['/register']))
     .catch( (err) => alert(err))
   }
 
