@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { NavigationComponent } from './navigation/navigation.component';
 
 import { LoginService } from './login/login.service';
+import { RegistrationService } from './registration/registration.service';
 import { ImageGridComponent } from './image-grid/image-grid.component';
 import { ImageGridService } from './image-grid/image-grid.service';
 
@@ -30,6 +31,7 @@ import { RegistrationComponent } from './registration/registration.component';
   ],
   providers: [
     LoginService,
+    RegistrationService,
     ImageGridService
   ],
   bootstrap: [AppComponent]
