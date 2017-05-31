@@ -39,6 +39,10 @@ h1 {
   cursor: pointer;
 }
 
+.button:hover {
+  opacity: 0.9;
+}
+
 li {
   color: red;
 }
