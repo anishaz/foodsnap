@@ -42,12 +42,9 @@ module.exports = {
   },
 
   current: (req,res) => {
-    if(!req.session.user){
-      return res.status(401).send("You need to log in.");
-    }else{
+    if(req.session.user){
       return res.json(req.session.user);
-    }
-  },
+    },
 
   logout: (req,res) => {
     req.session.destroy();
