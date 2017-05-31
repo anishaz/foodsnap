@@ -1,5 +1,5 @@
 <form (submit)="login(formData)" #formData="ngForm" class="logreg">
-  <h1>Login</h1>
+  <h1>Welcome back! Please login.</h1>
   <input type="email"
   name="email"
   required
@@ -22,5 +22,5 @@
   <ul *ngIf="password.errors && (password.dirty)">
         <li [hidden]="!password.errors.required">Password is required.</li>
   </ul>
-  <input type="submit" class="button" value="Login">
+  <input type="submit" class="button" value="Submit">
 </form>

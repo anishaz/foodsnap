@@ -1,5 +1,5 @@
 .logreg {
-  width: 350px;
+  width: 400px;
   padding: 20px;
   background: #fff;
   border-top: 8px solid #F3DFA2;
@@ -13,6 +13,7 @@ h1 {
   font-size: 30px;
   margin-top: 0;
   margin-bottom: 20px;
+  font-family: 'Nunito', Helvetica, sans-serif;
 }
 
 .logreg input {
