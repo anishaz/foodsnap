@@ -13,7 +13,7 @@ module.exports = {
       }else if(user == null) {
         return res.status(500).send("User does not exist")
       } else {
-        console.log("User exists");
+        console.log("User logged in");
         req.session.user = user;
         return res.json(user);
       }
@@ -44,10 +44,12 @@ module.exports = {
   current: (req,res) => {
     if(req.session.user){
       return res.json(req.session.user);
-    },
+    }
+  },
 
   logout: (req,res) => {
     req.session.destroy();
+    console.log('logged out');
     res.redirect('/');
   }
 

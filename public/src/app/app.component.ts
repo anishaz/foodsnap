@@ -1,6 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { RouterModule, Routes, Router } from '@angular/router';
-import { LoginService } from './login/login.service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -8,19 +6,5 @@ import { LoginService } from './login/login.service';
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent implements OnInit {
-user: any;
-
-constructor(private _loginService: LoginService, private _router: Router) {}
-
-ngOnInit () {
-  this.getCurrentUser();
-}
-
-  getCurrentUser() {
-    this._loginService.getCurrent()
-    .then( (user) => this.user = user)
-      .catch( (err) => console.log(err))
-  }
-
+export class AppComponent {
 }
