@@ -15,13 +15,16 @@ import { ImageGridService } from './image-grid/image-grid.service';
 import { routing } from './app.routes';
 import { RegistrationComponent } from './registration/registration.component';
 
+import { FileSelectDirective } from 'ng2-file-upload';
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     NavigationComponent,
     RegistrationComponent,
-    ImageGridComponent
+    ImageGridComponent,
+    FileSelectDirective
   ],
   imports: [
     BrowserModule,
