@@ -1,6 +1,13 @@
 let express = require("express");
 let app = express();
 
+//require multer for the file uploads
+var multer = require('multer');
+// set the directory for the uploads to the uploaded to
+var DIR = './uploads/';
+//define the type of upload multer would be doing and pass in its destination, in our case, its a single file with the name photo
+var upload = multer({dest: DIR}).single('photo');
+
 const path = require("path");
 
 let session = require('express-session');
@@ -20,6 +27,15 @@ app.use(session(sessionConfig));
 let bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+
+//create a cors middleware
+app.use(function(req, res, next) {
+//set headers to allow cross origin request.
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
 
 app.use(express.static(path.join(__dirname, 'public', 'dist')));
 

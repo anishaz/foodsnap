@@ -51,6 +51,18 @@ module.exports = {
     req.session.destroy();
     console.log('logged out');
     res.redirect('/');
-  }
+  },
+
+  upload: (req,res,next) => {
+    var path = '';
+    upload(req,res, function(err) {
+      if(err){
+        console.log(err);
+        return res.status(422).send("An Error Occurred")
+      }
+      path = req.file.path;
+      return res.send("Upload completed for "+path);
+    });
+  },
 
 }
