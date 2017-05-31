@@ -40,6 +40,19 @@ app.use(function(req, res, next) {
 app.use(express.static(path.join(__dirname, 'public', 'dist')));
 
 require('./server/config/mongoose');
+app.post('/api/upload', function (req, res, next) {
+     var path = '';
+     upload(req, res, function (err) {
+        if (err) {
+          // An error occurred when uploading
+          console.log(err);
+          return res.status(422).send("an Error occured")
+        }
+       // No error occured.
+        path = req.file.path;
+        return res.send("Upload Completed for "+path);
+  });
+})
 require('./server/config/routes')(app);
 
 app.get('*', function (req, res) {
