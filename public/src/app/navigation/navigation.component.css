@@ -7,11 +7,11 @@
 
 h1 {
   text-shadow: 1px 2px 2px #010;
-  font-size: 2em;
+  font-size: 3em;
 }
 
 h1 a:link, h1 a:visited {
-  color: #7EBDC2
+  color: #7EBDC2;
 }
 
 h1 a:active, h1 a:hover {
@@ -25,4 +25,5 @@ ul {
 
 li {
   margin: 0 15px;
+  font-size: 2em;
 }

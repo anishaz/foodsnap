@@ -1,21 +1,25 @@
-<form (submit)="login(formData)" #formData="ngForm">
-  <label for="email">Email:</label>
+<form (submit)="login(formData)" #formData="ngForm" class="logreg">
+  <h1>Welcome back! Please login.</h1>
   <input type="email"
   name="email"
   required
+  pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
   ngModel
-  #email="ngModel">
-  <ul *ngIf="email.errors && (email.dirty || email.touched)">
-        <li [hidden]="!email.errors.required">Email is required.</li>
+  #email="ngModel"
+  placeholder="Email Address"
+  class="email">
+  <ul *ngIf="email.errors && (email.dirty)">
+        <li [hidden]="!email.errors.pattern">Email is invalid.</li>
   </ul>
-  <label for="password">Password:</label>
   <input type="password"
   name="password"
   required
   ngModel
-  #password="ngModel">
-  <ul *ngIf="password.errors && (password.dirty || password.touched)">
+  #password="ngModel"
+  placeholder="Password"
+  class="password">
+  <ul *ngIf="password.errors && (password.dirty)">
         <li [hidden]="!password.errors.required">Password is required.</li>
   </ul>
-  <input type="submit" value="Login">
+  <input type="submit" class="button" value="Submit">
 </form>

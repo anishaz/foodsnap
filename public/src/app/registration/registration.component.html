@@ -1,50 +1,49 @@
 <p *ngFor="let err of errors">{{err}}</p>
-<form (submit)="register(formData)" #formData="ngForm">
-  <label for="first_name">First Name:</label>
+<form (submit)="register(formData)" #formData="ngForm" class="logreg">
+  <h1>Register</h1>
   <input type="text"
   name="first_name"
   required
   minlength = "3"
   maxlength = "20"
   ngModel
-  #first_name="ngModel">
-  <ul *ngIf="first_name.errors && (first_name.dirty || first_name.touched)">
+  #first_name="ngModel"
+  placeholder="First Name">
+  <ul *ngIf="first_name.errors && (first_name.dirty)">
         <li [hidden]="!first_name.errors.minlength">First name must be at least 3 characters.</li>
         <li [hidden]="!first_name.errors.maxlength">First name must be no greater than 20 characters.</li>
-        <li [hidden]="!first_name.errors.required">First name is required.</li>
   </ul>
-  <label for="last_name">Last Name:</label>
   <input type="text"
   name="last_name"
   required
   minlength = "3"
   maxlength = "25"
   ngModel
-  #last_name="ngModel">
-  <ul *ngIf="last_name.errors && (last_name.dirty || last_name.touched)">
+  #last_name="ngModel"
+  placeholder="Last Name">
+  <ul *ngIf="last_name.errors && (last_name.dirty)">
         <li [hidden]="!last_name.errors.minlength">Last name must be at least 3 characters.</li>
         <li [hidden]="!last_name.errors.maxlength">Last name must be no greater than 25 characters.</li>
-        <li [hidden]="!last_name.errors.required">Last name is required.</li>
   </ul>
-  <label for="email">Email:</label>
   <input type="email"
   name="email"
   required
+  pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
   ngModel
-  #email="ngModel">
-  <ul *ngIf="email.errors && (email.dirty || email.touched)">
-        <li [hidden]="!email.errors.required">Email is required.</li>
+  #email="ngModel"
+  placeholder="Email Address">
+  <ul *ngIf="email.errors && (email.dirty)">
+        <li [hidden]="!email.errors.pattern">Email is invalid.</li>
   </ul>
-  <label for="password">Password:</label>
   <input type="password"
   name="password"
   required
   minlength = "8"
   ngModel
-  #password="ngModel">
-  <ul *ngIf="password.errors && (password.dirty || password.touched)">
-        <li [hidden]="!password.errors.required">Password is required.</li>
+  #password="ngModel"
+  placeholder="Password">
+  <ul *ngIf="password.errors && (password.dirty)">
         <li [hidden]="!password.errors.minlength">Password must be at least 8 characters.</li>
   </ul>
-  <input type="submit" value="Register">
+  <input type="submit" class="button" value="Submit">
 </form>
