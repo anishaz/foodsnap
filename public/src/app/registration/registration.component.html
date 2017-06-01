@@ -12,7 +12,6 @@
   <ul *ngIf="first_name.errors && (first_name.dirty)">
         <li [hidden]="!first_name.errors.minlength">First name must be at least 3 characters.</li>
         <li [hidden]="!first_name.errors.maxlength">First name must be no greater than 20 characters.</li>
-        <li [hidden]="!first_name.errors.required">First name is required.</li>
   </ul>
   <input type="text"
   name="last_name"
@@ -25,7 +24,6 @@
   <ul *ngIf="last_name.errors && (last_name.dirty)">
         <li [hidden]="!last_name.errors.minlength">Last name must be at least 3 characters.</li>
         <li [hidden]="!last_name.errors.maxlength">Last name must be no greater than 25 characters.</li>
-        <li [hidden]="!last_name.errors.required">Last name is required.</li>
   </ul>
   <input type="email"
   name="email"
@@ -35,7 +33,6 @@
   #email="ngModel"
   placeholder="Email Address">
   <ul *ngIf="email.errors && (email.dirty)">
-        <li [hidden]="!email.errors.required">Email is required.</li>
         <li [hidden]="!email.errors.pattern">Email is invalid.</li>
   </ul>
   <input type="password"
@@ -46,7 +43,6 @@
   #password="ngModel"
   placeholder="Password">
   <ul *ngIf="password.errors && (password.dirty)">
-        <li [hidden]="!password.errors.required">Password is required.</li>
         <li [hidden]="!password.errors.minlength">Password must be at least 8 characters.</li>
   </ul>
   <input type="submit" class="button" value="Submit">

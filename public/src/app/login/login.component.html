@@ -9,7 +9,6 @@
   placeholder="Email Address"
   class="email">
   <ul *ngIf="email.errors && (email.dirty)">
-        <li [hidden]="!email.errors.required">Email is required.</li>
         <li [hidden]="!email.errors.pattern">Email is invalid.</li>
   </ul>
   <input type="password"
