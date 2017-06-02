@@ -1,12 +1,25 @@
 let express = require("express");
 let app = express();
 //require multer for the file uploads
-
 var multer = require('multer');
+let bodyParser = require("body-parser");
+app.use(bodyParser.json({limit:'50mb'})); app.use(bodyParser.urlencoded({extended:true, limit:'50mb'}));
 // set the directory for the uploads to the uploaded to
 var DIR = './upload/';
 //define the type of upload multer would be doing and pass in its destination, in our case, its a single file with the name photo
-var upload = multer({dest: DIR}).single('photo');
+var upload = multer({dest: './upload/',
+    rename: function (fieldname, filename) {
+        return  filename + Date.now();
+    },
+    limits: {
+        fieldNameSize: 200,
+        files: 5,
+        fields: 5
+    }
+});
+
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
 
 const path = require("path");
 
@@ -24,7 +37,7 @@ var sessionConfig = {
 }
 app.use(session(sessionConfig));
 
-let bodyParser = require("body-parser");
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
