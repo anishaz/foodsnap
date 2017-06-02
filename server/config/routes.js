@@ -7,4 +7,8 @@ module.exports = app => {
   app.get('/logout', controller.logout);
   app.post('/api/upload', controller.upload);
   app.get('/api/images', controller.getImages);
+<<<<<<< HEAD
+=======
+  app.get('/api/images/:id', controller.showprofile)
+>>>>>>> initial commit by isaac
 }
