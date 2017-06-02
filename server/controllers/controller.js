@@ -79,41 +79,22 @@ module.exports = {
         return res.json(allimages);
       }
     })
-<<<<<<< HEAD
-  }
-=======
   },
 
   showprofile: (req,res)=>{
-  //   if(!req.session.user){
-  //     return res.status(500).send("No such a user")
-  //   }else{
-  //     console.log("lets go!")
-  //     User.find({_id:req.params.id}).populate('_images').exec((err,images)=>{
-  //       if(err){
-  //         console.log(err)
-  //       }else{
-  //         console.log("yeah!!!!!")
-  //         return res.json(images)
-  //       }
-  //     })
-  //   }
-  // }
-
-  if(!req.session.user){
-    return res.status(500).sending("no such a user")
-  }else{
-    console.log("Lets go!!")
-    Image.find({_user:req.params.id}, (err,images)=>{
-      if(err){
-        console.log(err)
-      }else{
-        console.log("YEAH!!!!")
-        return res.json(images)
-      }
-    })
+    if(!req.session.user){
+      return res.status(500).send("no such a user")
+    }else{
+      console.log("Lets go!!")
+      Image.find({_user:req.params.id}, (err,images)=>{
+        if(err){
+          console.log(err)
+        }else{
+          console.log("YEAH!!!!")
+          return res.json(images)
+        }
+      })
+    }
   }
-}
->>>>>>> initial commit by isaac
 
 }
