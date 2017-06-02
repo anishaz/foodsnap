@@ -2,7 +2,14 @@ let mongoose = require('mongoose');
 let Schema = mongoose.Schema;
 
 let ImageSchema = new mongoose.Schema({
-  name: {type:String, required:[true,"Name is required."]},
+  filename: {type:String},
+  handle: {type:String},
+  mimetype: {type:String},
+  originalPath: {type:String},
+  size: {type:Number},
+  source: {type:String},
+  status: {type:String},
+  url: {type:String},
   _user: {type:Schema.Types.ObjectId, ref: 'User'},
 }, {timestamps:true});
 
