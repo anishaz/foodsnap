@@ -11,6 +11,7 @@ import { LoginService } from './login/login.service';
 import { RegistrationService } from './registration/registration.service';
 import { ImageGridComponent } from './image-grid/image-grid.component';
 import { ImageGridService } from './image-grid/image-grid.service';
+import { UploadService } from './upload/upload.service';
 
 import { routing } from './app.routes';
 import { RegistrationComponent } from './registration/registration.component';
@@ -35,6 +36,7 @@ import { UploadComponent } from './upload/upload.component';
     LoginService,
     RegistrationService,
     ImageGridService,
+    UploadService
   ],
   bootstrap: [AppComponent]
 })

@@ -9,7 +9,7 @@ export class ImageGridService {
   constructor(private _http: Http) { }
 
   getImages() {
-   return this._http.get('https://jsonplaceholder.typicode.com/photos').map((response: Response) => response.json()).toPromise();
+   return this._http.get('/api/images').map((response: Response) => response.json()).toPromise();
  }
 
 }

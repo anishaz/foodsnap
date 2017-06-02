@@ -51,6 +51,34 @@ module.exports = {
     req.session.destroy();
     console.log('logged out');
     res.redirect('/');
+  },
+
+  upload: (req,res) => {
+    if(!req.session.user){
+      return res.status(500).send("no user")
+    }else{
+      let newImage = new Image(req.body);
+      newImage._user = req.session.user._id
+      newImage.save((err, savedImage) => {
+        if(err){
+          console.log(err);
+        } else {
+          console.log("Image is saved");
+          return res.json(savedImage);
+        }
+      })
+
+    }
+  },
+
+  getImages: (req,res) => {
+    Image.find({},(err,allimages)=>{
+      if(err){
+        console.log(err);
+      }else{
+        return res.json(allimages);
+      }
+    })
   }
 
 }
