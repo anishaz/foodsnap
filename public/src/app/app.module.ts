@@ -17,6 +17,10 @@ import { routing } from './app.routes';
 import { RegistrationComponent } from './registration/registration.component';
 import { UploadComponent } from './upload/upload.component';
 
+import { ProfileComponent } from './profile/profile.component';
+import { ProfileService} from './profile/profile.service'
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,6 +29,8 @@ import { UploadComponent } from './upload/upload.component';
     RegistrationComponent,
     ImageGridComponent,
     UploadComponent,
+    ProfileComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -36,7 +42,9 @@ import { UploadComponent } from './upload/upload.component';
     LoginService,
     RegistrationService,
     ImageGridService,
-    UploadService
+    UploadService,
+    ProfileService
+
   ],
   bootstrap: [AppComponent]
 })
