@@ -17,7 +17,7 @@ let UserSchema = new mongoose.Schema({
   email: {
     type:String,
     required:[true,"An email address is required."],
-    unique: [true, “This email has already been registered.“],
+    unique: true,
     lowercase: true,
     validate: function(email) {
       return /^[a-zA-Z0-9.!#$%&’*+\/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email)

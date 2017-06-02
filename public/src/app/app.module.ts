@@ -21,7 +21,7 @@ import { RegistrationComponent } from './registration/registration.component';
     LoginComponent,
     NavigationComponent,
     RegistrationComponent,
-    ImageGridComponent
+    ImageGridComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,7 +32,7 @@ import { RegistrationComponent } from './registration/registration.component';
   providers: [
     LoginService,
     RegistrationService,
-    ImageGridService
+    ImageGridService,
   ],
   bootstrap: [AppComponent]
 })

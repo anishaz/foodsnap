@@ -1,5 +1,6 @@
 let express = require("express");
 let app = express();
+let multer = require('multer');
 
 const path = require("path");
 
