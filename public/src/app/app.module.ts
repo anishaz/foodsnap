@@ -14,6 +14,7 @@ import { ImageGridService } from './image-grid/image-grid.service';
 
 import { routing } from './app.routes';
 import { RegistrationComponent } from './registration/registration.component';
+import { UploadComponent } from './upload/upload.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { RegistrationComponent } from './registration/registration.component';
     NavigationComponent,
     RegistrationComponent,
     ImageGridComponent,
+    UploadComponent,
   ],
   imports: [
     BrowserModule,
