@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ImageGridService } from './image-grid.service';
 import { RouterModule, Routes, Router } from '@angular/router';
+import { LoginService } from '.././login/login.service';
 
 @Component({
   selector: 'image-grid',
@@ -10,11 +11,13 @@ import { RouterModule, Routes, Router } from '@angular/router';
 
 export class ImageGridComponent implements OnInit {
   images: Array<any>;
+  user: any;
 
-  constructor(private _imageGridService: ImageGridService, private _router: Router) { }
+  constructor(private _imageGridService: ImageGridService, private _loginService: LoginService, private _router: Router) { }
 
   ngOnInit() {
     this.getImages();
+    this.getCurrentUser();
   }
 
   getImages(){
@@ -32,5 +35,14 @@ export class ImageGridComponent implements OnInit {
         this.getImages();
       })
       .catch((err) => console.log(err))
+  }
+
+  getCurrentUser() {
+    this._loginService.getCurrent()
+    .then( (user) => {
+      this.user = user;
+      console.log("logged in")
+    })
+      .catch( (err) => console.log(err))
   }
 }
