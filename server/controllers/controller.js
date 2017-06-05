@@ -104,10 +104,13 @@ module.exports = {
         return res.sendStatus(500);
       } else {
         if(image.likes.indexOf(req.session.user._id) != -1) {
-          return res.json(image);
-        }
+          var index = image.likes.indexOf(req.session.user._id);
+          image.likes.splice(index, 1);
+          console.log(image.likes.length);
+        } else {
         image.likes.push(req.session.user._id);
-        console.log("I've been pushed", image);
+        console.log("I've been pushed", image.likes.length);
+        }
         image.save((err, savedImage) => {
           if(err){
             console.log(err);
