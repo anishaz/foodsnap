@@ -8,4 +8,5 @@ module.exports = app => {
   app.post('/api/upload', controller.upload);
   app.get('/api/images', controller.getImages);
   app.get('/api/images/:id', controller.showprofile);
+  app.post('/api/likes', controller.addLike);
 }

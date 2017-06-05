@@ -25,4 +25,12 @@ export class ImageGridComponent implements OnInit {
       })
       .catch( (err) => console.log(err))
   };
+
+  like(image_id){
+    this._imageGridService.like(image_id)
+      .then(()=> {
+        this.getImages();
+      })
+      .catch((err) => console.log(err))
+  }
 }

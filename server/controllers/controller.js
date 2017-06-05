@@ -95,6 +95,28 @@ module.exports = {
         }
       })
     }
+  },
+
+  addLike: (req,res) => {
+    Image.findOne({_id: req.body.id}, (err, message) => {
+      if(err){
+        console.log(err);
+        return res.sendStatus(500);
+      } else {
+        if(image.like.indexOf(req.session.user._id) != -1) {
+          return res.json(image);
+        }
+        image.like.push(req.session.user._id);
+        console.log("I've been pushed", image);
+        image.save((err, savedImage) => {
+          if(err){
+            console.log(err);
+          } else {
+            return res.json(savedImage);
+          }
+        })
+      }
+    })
   }
 
 }

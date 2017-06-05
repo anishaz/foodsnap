@@ -11,6 +11,7 @@ let ImageSchema = new mongoose.Schema({
   status: {type:String},
   url: {type:String},
   _user: {type:Schema.Types.ObjectId, ref: 'User'},
+  likes: [{type: Schema.Types.ObjectId, ref: 'User'}],
 }, {timestamps:true});
 
 mongoose.model('Image', ImageSchema);
