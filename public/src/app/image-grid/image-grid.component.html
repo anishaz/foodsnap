@@ -1,8 +1,9 @@
 <div class="image row masonry">
-  <li *ngFor="let image of images">
-      <img src="{{ image.url }}" class="item">
+  <!-- <li *ngFor="let image of images">
+      <img src="{{ image.url }}" class="item"> -->
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRGAA81e46aL4DXP87OJtJHNDJfCv0QHBBlofJMqQlBRZue1Up">
       <button (click)="like(image._id)" *ngIf="user">Like</button>
       <p>Total Likes: {{ image.likes.length }}</p>
-  </li>
+  <!-- </li> -->
 
 </div>
