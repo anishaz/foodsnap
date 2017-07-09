@@ -3,7 +3,8 @@
       <!-- <img src="{{ image.url }}" class="item"> -->
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRGAA81e46aL4DXP87OJtJHNDJfCv0QHBBlofJMqQlBRZue1Up">
       <div class="image__infobar">
-        <a (click)="like(image._id)" href="#" *ngIf="user" class="image__infobar_item">❤ Love</a>
+        <a (click)="like(image._id)" href="#" *ngIf="user && image.likes.length === 0" class="image__infobar_item">❤ Like</a>
+        <a (click)="like(image._id)" href="#" *ngIf="user && image.likes.length != 0" class="image__infobar_item">❤ Unlike</a>
         <p class="image__infobar_item">{{ image.likes.length }} ❤ </p>
       </div>
   </li>
