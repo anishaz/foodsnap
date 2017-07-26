@@ -1,5 +1,5 @@
 # About
-To be filled out soon.
+Foodsnap is a photo sharing application for foodies. It is a Node application with ExpressJS for backend, MongoDB for persistence, and Angular.io implementation for the views.
 
 # Installation
 
